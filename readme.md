@@ -43,3 +43,26 @@ Use WooCommerce & MaxMind GeoIP database to locate customer
 $geo_location = WC_Geolocation::geolocate_ip();
 $country = $geo_location['country'];
 ```
+
+## Get cart & customer from session
+
+```
+WC()->cart->get_customer()->set_shipping_country($country);
+WC()->cart->get_customer();
+```
+
+## Get cart & customer from session
+
+```
+// WC_Order
+$order = wc_get_order($order_id);
+foreach ( $order->get_items() as $item_id => $item ) {
+    // WC_Order_Item
+
+    // $item->get_name()
+    // $item->get_product_id()
+    // $item->get_total()
+    // $item->get_quantity()
+
+}
+```

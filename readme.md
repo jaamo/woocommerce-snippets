@@ -25,3 +25,21 @@ add_action('woocommerce_order_status_changed', function ($order_id, $from_status
 
 }, 10, 4);
 ```
+
+## Allowed countries
+
+Get list of allowed countries
+
+```
+$wc_countries = new WC_Countries();
+$allowed_countries = $wc_countries->get_allowed_countries();
+```
+
+## Allowed countries
+
+Use WooCommerce & MaxMind GeoIP database to locate customer
+
+```
+$geo_location = WC_Geolocation::geolocate_ip();
+$country = $geo_location['country'];
+```
